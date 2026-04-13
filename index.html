@@ -1076,7 +1076,7 @@
   // ── DATA COLLECTION ────────────────────────────────────────
   function sendToSheet() {
     // Don't attempt if URL hasn't been set
-    if(!SHEET_URL || SHEET_URL === 'PASTE_YOUR_APPS_SCRIPT_URL_HERE') {
+    if(!SHEET_URL || SHEET_URL === 'https://script.google.com/macros/s/AKfycbwyskS1P-CJw9V2xiA6TVVCSDhoP541z2CNPqj0PKheNVh3eF2A2x0PjL5JuDLPVL0/exec') {
       console.log('Survey complete. Sheet URL not configured yet.');
       console.log('Response data:', JSON.stringify(state, null, 2));
       return;
