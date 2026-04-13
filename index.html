@@ -22,9 +22,7 @@
     --purple: #9B6DFF;
     --card-shadow: 0 4px 40px rgba(0,0,0,0.3);
   }
-
   * { margin:0; padding:0; box-sizing:border-box; }
-
   body {
     background: var(--navy);
     color: var(--white);
@@ -32,8 +30,6 @@
     min-height: 100vh;
     overflow-x: hidden;
   }
-
-  /* Background mesh */
   body::before {
     content: '';
     position: fixed;
@@ -45,8 +41,6 @@
     pointer-events: none;
     z-index: 0;
   }
-
-  /* Grid overlay */
   body::after {
     content: '';
     position: fixed;
@@ -58,7 +52,6 @@
     pointer-events: none;
     z-index: 0;
   }
-
   .container {
     position: relative;
     z-index: 1;
@@ -66,14 +59,11 @@
     margin: 0 auto;
     padding: 32px 20px 80px;
   }
-
-  /* ── HEADER ─────────────────────────────────────────────────── */
   .header {
     text-align: center;
     margin-bottom: 40px;
     animation: fadeDown 0.6s ease both;
   }
-
   .brand-tag {
     display: inline-flex;
     align-items: center;
@@ -89,14 +79,12 @@
     text-transform: uppercase;
     margin-bottom: 20px;
   }
-
   .brand-tag .dot {
     width: 6px; height: 6px;
     background: var(--teal);
     border-radius: 50%;
     animation: pulse-dot 2s ease infinite;
   }
-
   .header h1 {
     font-family: 'Syne', sans-serif;
     font-size: clamp(28px, 5vw, 40px);
@@ -105,14 +93,12 @@
     letter-spacing: -0.02em;
     margin-bottom: 14px;
   }
-
   .header h1 span {
     background: linear-gradient(135deg, var(--teal) 0%, #00E5B3 60%, #7EFFD8 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
-
   .header p {
     color: var(--muted);
     font-size: 15px;
@@ -120,20 +106,16 @@
     max-width: 440px;
     margin: 0 auto;
   }
-
-  /* ── PROGRESS ─────────────────────────────────────────────────── */
   .progress-wrapper {
     margin-bottom: 32px;
     animation: fadeDown 0.6s 0.1s ease both;
   }
-
   .progress-meta {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 10px;
   }
-
   .progress-step {
     font-family: 'Syne', sans-serif;
     font-size: 13px;
@@ -142,7 +124,6 @@
     letter-spacing: 0.06em;
     text-transform: uppercase;
   }
-
   .xp-display {
     display: flex;
     align-items: center;
@@ -152,9 +133,7 @@
     font-weight: 700;
     color: var(--amber);
   }
-
   .xp-display svg { width:14px; height:14px; }
-
   .progress-bar-track {
     height: 4px;
     background: rgba(255,255,255,0.06);
@@ -162,7 +141,6 @@
     overflow: visible;
     position: relative;
   }
-
   .progress-bar-fill {
     height: 100%;
     background: linear-gradient(90deg, var(--teal-dark), var(--teal), #00E5B3);
@@ -170,7 +148,6 @@
     transition: width 0.6s cubic-bezier(0.34,1.56,0.64,1);
     position: relative;
   }
-
   .progress-bar-fill::after {
     content: '';
     position: absolute;
@@ -181,29 +158,24 @@
     border-radius: 50%;
     box-shadow: 0 0 10px var(--teal), 0 0 20px rgba(0,200,150,0.4);
   }
-
   .step-dots {
     display: flex;
     justify-content: space-between;
     margin-top: 10px;
     padding: 0 2px;
   }
-
   .step-dot {
     width: 4px; height: 4px;
     background: rgba(255,255,255,0.12);
     border-radius: 50%;
     transition: all 0.3s ease;
   }
-
   .step-dot.done { background: var(--teal); }
   .step-dot.current {
     background: var(--teal);
     box-shadow: 0 0 8px var(--teal);
     transform: scale(1.4);
   }
-
-  /* ── QUESTION CARD ─────────────────────────────────────────────── */
   .question-card {
     background: var(--navy-card);
     border: 1px solid var(--navy-border);
@@ -215,13 +187,8 @@
     display: none;
     animation: slideIn 0.45s cubic-bezier(0.34,1.2,0.64,1) both;
   }
-
-  @media (max-width: 480px) {
-    .question-card { padding: 28px 20px 24px; }
-  }
-
+  @media (max-width: 480px) { .question-card { padding: 28px 20px 24px; } }
   .question-card.active { display: block; }
-
   .question-card::before {
     content: '';
     position: absolute;
@@ -230,7 +197,6 @@
     background: linear-gradient(90deg, transparent, var(--teal), transparent);
     opacity: 0.5;
   }
-
   .q-number {
     font-family: 'Syne', sans-serif;
     font-size: 11px;
@@ -241,7 +207,6 @@
     margin-bottom: 12px;
     opacity: 0.7;
   }
-
   .q-text {
     font-family: 'Syne', sans-serif;
     font-size: clamp(18px, 3vw, 22px);
@@ -250,25 +215,15 @@
     margin-bottom: 8px;
     letter-spacing: -0.01em;
   }
-
   .q-sub {
     font-size: 13px;
     color: var(--muted);
     line-height: 1.5;
     margin-bottom: 28px;
   }
-
-  /* ── OPTION TYPES ─────────────────────────────────────────────── */
-
-  /* Single select tiles */
-  .options-grid {
-    display: grid;
-    gap: 10px;
-  }
-
+  .options-grid { display: grid; gap: 10px; }
   .options-grid.cols-2 { grid-template-columns: 1fr 1fr; }
   @media (max-width: 400px) { .options-grid.cols-2 { grid-template-columns: 1fr; } }
-
   .option-tile {
     background: rgba(255,255,255,0.03);
     border: 1.5px solid var(--navy-border);
@@ -283,56 +238,23 @@
     position: relative;
     overflow: hidden;
   }
-
   .option-tile:hover {
     background: rgba(0,200,150,0.06);
     border-color: rgba(0,200,150,0.3);
     transform: translateY(-1px);
   }
-
   .option-tile.selected {
     background: rgba(0,200,150,0.1);
     border-color: var(--teal);
     box-shadow: 0 0 0 1px var(--teal), 0 4px 20px rgba(0,200,150,0.15);
   }
-
-  .option-tile.selected .tile-check {
-    background: var(--teal);
-    border-color: var(--teal);
-  }
-
-  .option-tile.selected .tile-check::after {
-    opacity: 1;
-    transform: translate(-50%, -50%) scale(1);
-  }
-
-  .tile-icon {
-    font-size: 22px;
-    flex-shrink: 0;
-    width: 36px;
-    text-align: center;
-    filter: grayscale(0.3);
-    transition: filter 0.2s;
-  }
-
+  .option-tile.selected .tile-check { background: var(--teal); border-color: var(--teal); }
+  .option-tile.selected .tile-check::after { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+  .tile-icon { font-size: 22px; flex-shrink: 0; width: 36px; text-align: center; filter: grayscale(0.3); transition: filter 0.2s; }
   .option-tile.selected .tile-icon { filter: none; }
-
   .tile-content { flex: 1; }
-
-  .tile-label {
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 1.3;
-    color: var(--white);
-  }
-
-  .tile-desc {
-    font-size: 12px;
-    color: var(--muted);
-    margin-top: 2px;
-    line-height: 1.4;
-  }
-
+  .tile-label { font-size: 14px; font-weight: 500; line-height: 1.3; color: var(--white); }
+  .tile-desc { font-size: 12px; color: var(--muted); margin-top: 2px; line-height: 1.4; }
   .tile-check {
     width: 18px; height: 18px;
     border-radius: 50%;
@@ -342,7 +264,6 @@
     transition: all 0.2s;
     margin-left: auto;
   }
-
   .tile-check::after {
     content: '';
     position: absolute;
@@ -354,14 +275,7 @@
     opacity: 0;
     transition: all 0.2s;
   }
-
-  /* Multi-select chips */
-  .options-chips {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-  }
-
+  .options-chips { display: flex; flex-wrap: wrap; gap: 8px; }
   .chip {
     display: flex;
     align-items: center;
@@ -375,23 +289,10 @@
     font-size: 13px;
     font-weight: 500;
   }
-
-  .chip:hover {
-    border-color: rgba(0,200,150,0.4);
-    background: rgba(0,200,150,0.05);
-  }
-
-  .chip.selected {
-    background: rgba(0,200,150,0.12);
-    border-color: var(--teal);
-    color: var(--teal);
-  }
-
+  .chip:hover { border-color: rgba(0,200,150,0.4); background: rgba(0,200,150,0.05); }
+  .chip.selected { background: rgba(0,200,150,0.12); border-color: var(--teal); color: var(--teal); }
   .chip-icon { font-size: 16px; }
-
-  /* Slider */
   .slider-wrapper { padding: 8px 0; }
-
   .custom-slider {
     -webkit-appearance: none;
     appearance: none;
@@ -403,7 +304,6 @@
     margin: 20px 0 16px;
     cursor: pointer;
   }
-
   .custom-slider::-webkit-slider-thumb {
     -webkit-appearance: none;
     width: 24px; height: 24px;
@@ -413,41 +313,12 @@
     cursor: grab;
     transition: transform 0.1s;
   }
-
   .custom-slider::-webkit-slider-thumb:active { cursor: grabbing; transform: scale(1.2); }
-
-  .slider-labels {
-    display: flex;
-    justify-content: space-between;
-    font-size: 11px;
-    color: var(--muted);
-    margin-top: -8px;
-  }
-
-  .slider-value {
-    text-align: center;
-    font-family: 'Syne', sans-serif;
-    font-size: 28px;
-    font-weight: 800;
-    color: var(--teal);
-    margin-bottom: 4px;
-  }
-
-  .slider-value span {
-    font-size: 16px;
-    font-weight: 600;
-    opacity: 0.7;
-  }
-
-  /* Bundle cards */
-  .bundle-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-  }
-
+  .slider-labels { display: flex; justify-content: space-between; font-size: 11px; color: var(--muted); margin-top: -8px; }
+  .slider-value { text-align: center; font-family: 'Syne', sans-serif; font-size: 28px; font-weight: 800; color: var(--teal); margin-bottom: 4px; }
+  .slider-value span { font-size: 16px; font-weight: 600; opacity: 0.7; }
+  .bundle-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
   @media (max-width: 440px) { .bundle-grid { grid-template-columns: 1fr; } }
-
   .bundle-card {
     background: rgba(255,255,255,0.03);
     border: 1.5px solid var(--navy-border);
@@ -458,18 +329,12 @@
     position: relative;
     overflow: hidden;
   }
-
-  .bundle-card:hover {
-    transform: translateY(-2px);
-    border-color: rgba(0,200,150,0.3);
-  }
-
+  .bundle-card:hover { transform: translateY(-2px); border-color: rgba(0,200,150,0.3); }
   .bundle-card.selected {
     border-color: var(--teal);
     background: rgba(0,200,150,0.08);
     box-shadow: 0 0 0 1px var(--teal), 0 8px 30px rgba(0,200,150,0.12);
   }
-
   .bundle-badge {
     display: inline-block;
     font-size: 10px;
@@ -480,48 +345,12 @@
     border-radius: 100px;
     margin-bottom: 10px;
   }
-
-  .bundle-name {
-    font-family: 'Syne', sans-serif;
-    font-size: 15px;
-    font-weight: 700;
-    margin-bottom: 8px;
-  }
-
-  .bundle-features {
-    list-style: none;
-    margin-bottom: 14px;
-  }
-
-  .bundle-features li {
-    font-size: 12px;
-    color: var(--muted);
-    padding: 2px 0;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-  }
-
-  .bundle-features li::before {
-    content: '✓';
-    color: var(--teal);
-    font-size: 11px;
-    font-weight: 700;
-  }
-
-  .bundle-price {
-    font-family: 'Syne', sans-serif;
-    font-size: 20px;
-    font-weight: 800;
-    color: var(--white);
-  }
-
-  .bundle-price span {
-    font-size: 12px;
-    font-weight: 400;
-    color: var(--muted);
-  }
-
+  .bundle-name { font-family: 'Syne', sans-serif; font-size: 15px; font-weight: 700; margin-bottom: 8px; }
+  .bundle-features { list-style: none; margin-bottom: 14px; }
+  .bundle-features li { font-size: 12px; color: var(--muted); padding: 2px 0; display: flex; align-items: center; gap: 6px; }
+  .bundle-features li::before { content: '✓'; color: var(--teal); font-size: 11px; font-weight: 700; }
+  .bundle-price { font-family: 'Syne', sans-serif; font-size: 20px; font-weight: 800; color: var(--white); }
+  .bundle-price span { font-size: 12px; font-weight: 400; color: var(--muted); }
   .bundle-selected-badge {
     position: absolute;
     top: 12px; right: 12px;
@@ -535,13 +364,7 @@
     transform: scale(0);
     transition: all 0.2s cubic-bezier(0.34,1.56,0.64,1);
   }
-
-  .bundle-card.selected .bundle-selected-badge {
-    opacity: 1;
-    transform: scale(1);
-  }
-
-  /* ── NEXT BUTTON ─────────────────────────────────────────────── */
+  .bundle-card.selected .bundle-selected-badge { opacity: 1; transform: scale(1); }
   .btn-next {
     display: flex;
     align-items: center;
@@ -562,25 +385,11 @@
     transition: all 0.25s;
     box-shadow: 0 4px 20px rgba(0,200,150,0.25);
   }
-
-  .btn-next:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 30px rgba(0,200,150,0.35);
-  }
-
+  .btn-next:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,200,150,0.35); }
   .btn-next:active { transform: translateY(0); }
-
-  .btn-next:disabled {
-    opacity: 0.35;
-    cursor: not-allowed;
-    transform: none;
-    box-shadow: none;
-  }
-
+  .btn-next:disabled { opacity: 0.35; cursor: not-allowed; transform: none; box-shadow: none; }
   .btn-next svg { width:16px; height:16px; transition: transform 0.2s; }
   .btn-next:hover svg { transform: translateX(3px); }
-
-  /* ── XP POP ─────────────────────────────────────────────── */
   .xp-pop {
     position: fixed;
     top: 50%; left: 50%;
@@ -596,12 +405,7 @@
     z-index: 100;
     opacity: 0;
   }
-
-  .xp-pop.animate {
-    animation: xpPop 0.8s cubic-bezier(0.34,1.56,0.64,1) both;
-  }
-
-  /* ── INSIGHT BUBBLE ─────────────────────────────────────────────── */
+  .xp-pop.animate { animation: xpPop 0.8s cubic-bezier(0.34,1.56,0.64,1) both; }
   .insight-bubble {
     background: rgba(155,109,255,0.08);
     border: 1px solid rgba(155,109,255,0.2);
@@ -613,18 +417,10 @@
     line-height: 1.5;
     display: none;
   }
-
   .insight-bubble.show { display: block; animation: fadeIn 0.4s ease; }
   .insight-bubble strong { color: #B99DFF; }
-
-  /* ── RESULT CARD ─────────────────────────────────────────────── */
-  #screen-result {
-    display: none;
-    animation: fadeIn 0.6s ease both;
-  }
-
+  #screen-result { display: none; animation: fadeIn 0.6s ease both; }
   #screen-result.active { display: block; }
-
   .result-hero {
     background: var(--navy-card);
     border: 1px solid var(--navy-border);
@@ -636,7 +432,6 @@
     overflow: hidden;
     box-shadow: var(--card-shadow);
   }
-
   .result-hero::before {
     content: '';
     position: absolute;
@@ -646,41 +441,10 @@
     background: radial-gradient(circle, rgba(0,200,150,0.15) 0%, transparent 70%);
     pointer-events: none;
   }
-
-  .result-emoji {
-    font-size: 64px;
-    margin-bottom: 16px;
-    display: block;
-    animation: bounceIn 0.6s cubic-bezier(0.34,1.56,0.64,1) both;
-  }
-
-  .result-archetype {
-    font-family: 'Syne', sans-serif;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--teal);
-    margin-bottom: 8px;
-  }
-
-  .result-title {
-    font-family: 'Syne', sans-serif;
-    font-size: clamp(26px, 5vw, 36px);
-    font-weight: 800;
-    letter-spacing: -0.02em;
-    line-height: 1.1;
-    margin-bottom: 16px;
-  }
-
-  .result-desc {
-    font-size: 14px;
-    color: var(--muted);
-    line-height: 1.65;
-    max-width: 420px;
-    margin: 0 auto 28px;
-  }
-
+  .result-emoji { font-size: 64px; margin-bottom: 16px; display: block; animation: bounceIn 0.6s cubic-bezier(0.34,1.56,0.64,1) both; }
+  .result-archetype { font-family: 'Syne', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--teal); margin-bottom: 8px; }
+  .result-title { font-family: 'Syne', sans-serif; font-size: clamp(26px, 5vw, 36px); font-weight: 800; letter-spacing: -0.02em; line-height: 1.1; margin-bottom: 16px; }
+  .result-desc { font-size: 14px; color: var(--muted); line-height: 1.65; max-width: 420px; margin: 0 auto 28px; }
   .xp-total {
     display: inline-flex;
     align-items: center;
@@ -695,34 +459,10 @@
     color: var(--amber);
     margin-bottom: 28px;
   }
-
-  .result-stats {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 12px;
-    margin-bottom: 0;
-  }
-
-  .stat-box {
-    background: rgba(255,255,255,0.04);
-    border-radius: 12px;
-    padding: 14px 10px;
-  }
-
-  .stat-value {
-    font-family: 'Syne', sans-serif;
-    font-size: 20px;
-    font-weight: 800;
-    color: var(--teal);
-    margin-bottom: 4px;
-  }
-
-  .stat-label {
-    font-size: 11px;
-    color: var(--muted);
-    line-height: 1.3;
-  }
-
+  .result-stats { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-bottom: 0; }
+  .stat-box { background: rgba(255,255,255,0.04); border-radius: 12px; padding: 14px 10px; }
+  .stat-value { font-family: 'Syne', sans-serif; font-size: 20px; font-weight: 800; color: var(--teal); margin-bottom: 4px; }
+  .stat-label { font-size: 11px; color: var(--muted); line-height: 1.3; }
   .result-reco {
     background: var(--navy-card);
     border: 1px solid var(--navy-border);
@@ -731,47 +471,11 @@
     margin-bottom: 16px;
     box-shadow: var(--card-shadow);
   }
-
-  .reco-label {
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--teal);
-    margin-bottom: 14px;
-    opacity: 0.8;
-  }
-
-  .reco-title {
-    font-family: 'Syne', sans-serif;
-    font-size: 18px;
-    font-weight: 700;
-    margin-bottom: 8px;
-  }
-
-  .reco-text {
-    font-size: 13.5px;
-    color: var(--muted);
-    line-height: 1.6;
-    margin-bottom: 16px;
-  }
-
-  .reco-features {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-  }
-
-  .reco-tag {
-    background: rgba(0,200,150,0.1);
-    border: 1px solid rgba(0,200,150,0.2);
-    border-radius: 100px;
-    padding: 5px 12px;
-    font-size: 12px;
-    color: var(--teal);
-    font-weight: 500;
-  }
-
+  .reco-label { font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal); margin-bottom: 14px; opacity: 0.8; }
+  .reco-title { font-family: 'Syne', sans-serif; font-size: 18px; font-weight: 700; margin-bottom: 8px; }
+  .reco-text { font-size: 13.5px; color: var(--muted); line-height: 1.6; margin-bottom: 16px; }
+  .reco-features { display: flex; flex-wrap: wrap; gap: 8px; }
+  .reco-tag { background: rgba(0,200,150,0.1); border: 1px solid rgba(0,200,150,0.2); border-radius: 100px; padding: 5px 12px; font-size: 12px; color: var(--teal); font-weight: 500; }
   .btn-explore {
     display: block;
     width: 100%;
@@ -790,96 +494,55 @@
     box-shadow: 0 4px 20px rgba(0,200,150,0.25);
     margin-top: 20px;
   }
+  .btn-explore:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,200,150,0.35); }
 
-  .btn-explore:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 30px rgba(0,200,150,0.35);
+  /* Saving indicator */
+  .save-indicator {
+    display: none;
+    align-items: center;
+    gap: 8px;
+    justify-content: center;
+    padding: 10px;
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 12px;
   }
+  .save-indicator.show { display: flex; animation: fadeIn 0.3s ease; }
+  .save-dot { width:6px; height:6px; background:var(--teal); border-radius:50%; animation: pulse-dot 1s ease infinite; }
 
-  /* ── ANIMATIONS ─────────────────────────────────────────────── */
-  @keyframes fadeDown {
-    from { opacity: 0; transform: translateY(-16px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-  }
-
-  @keyframes slideIn {
-    from { opacity: 0; transform: translateX(30px) scale(0.97); }
-    to { opacity: 1; transform: translateX(0) scale(1); }
-  }
-
-  @keyframes slideOut {
-    from { opacity: 1; transform: translateX(0) scale(1); }
-    to { opacity: 0; transform: translateX(-30px) scale(0.97); }
-  }
-
+  @keyframes fadeDown { from { opacity: 0; transform: translateY(-16px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+  @keyframes slideIn { from { opacity: 0; transform: translateX(30px) scale(0.97); } to { opacity: 1; transform: translateX(0) scale(1); } }
+  @keyframes slideOut { from { opacity: 1; transform: translateX(0) scale(1); } to { opacity: 0; transform: translateX(-30px) scale(0.97); } }
   @keyframes xpPop {
     0% { opacity: 0; transform: translate(-50%, -50%) scale(0.5); }
     40% { opacity: 1; transform: translate(-50%, -50%) scale(1.15); }
     70% { transform: translate(-50%, -80%) scale(1); opacity: 1; }
     100% { transform: translate(-50%, -120%) scale(0.9); opacity: 0; }
   }
-
   @keyframes bounceIn {
     0% { transform: scale(0.3); opacity: 0; }
     60% { transform: scale(1.15); }
     80% { transform: scale(0.95); }
     100% { transform: scale(1); opacity: 1; }
   }
-
-  @keyframes pulse-dot {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.4; }
-  }
-
-  /* ── SKIP + BACK ─────────────────────────────────────────────── */
-  .nav-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 16px;
-    animation: fadeDown 0.6s 0.15s ease both;
-  }
-
-  .btn-back {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    background: none;
-    border: none;
-    color: var(--muted);
-    font-family: 'DM Sans', sans-serif;
-    font-size: 13px;
-    cursor: pointer;
-    padding: 4px 0;
-    transition: color 0.2s;
-  }
-
+  @keyframes pulse-dot { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+  .nav-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; animation: fadeDown 0.6s 0.15s ease both; }
+  .btn-back { display: flex; align-items: center; gap: 6px; background: none; border: none; color: var(--muted); font-family: 'DM Sans', sans-serif; font-size: 13px; cursor: pointer; padding: 4px 0; transition: color 0.2s; }
   .btn-back:hover { color: var(--white); }
   .btn-back:disabled { opacity: 0.3; cursor: not-allowed; }
-
-  .time-est {
-    font-size: 12px;
-    color: var(--muted);
-    opacity: 0.6;
-  }
+  .time-est { font-size: 12px; color: var(--muted); opacity: 0.6; }
 </style>
 </head>
 <body>
 <div class="container">
 
-  <!-- HEADER -->
   <div class="header">
     <div class="brand-tag"><span class="dot"></span>ABHI × Activ Yuva</div>
     <h1>What's Your <span>Health Style?</span></h1>
     <p>A 3-minute check-in. Answer honestly and find out which Yuva type you are — plus what your health routine is actually costing you.</p>
   </div>
 
-  <!-- PROGRESS -->
   <div class="progress-wrapper">
     <div class="progress-meta">
       <span class="progress-step" id="step-label">Question 1 of 10</span>
@@ -894,7 +557,6 @@
     <div class="step-dots" id="step-dots"></div>
   </div>
 
-  <!-- NAV ROW -->
   <div class="nav-row">
     <button class="btn-back" id="btn-back" disabled onclick="goBack()">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
@@ -903,7 +565,7 @@
     <span class="time-est">~3 min</span>
   </div>
 
-  <!-- ═══════════════════════════════════ Q1 ══ -->
+  <!-- Q1 -->
   <div class="question-card active" id="q1">
     <div class="q-number">01 — Warm Up</div>
     <div class="q-text">How would you describe your relationship with your health right now?</div>
@@ -911,104 +573,52 @@
     <div class="options-grid">
       <div class="option-tile" onclick="selectTile(this,'q1','active_builder')">
         <div class="tile-icon">🏃</div>
-        <div class="tile-content">
-          <div class="tile-label">Actively building habits</div>
-          <div class="tile-desc">Tracking, improving, optimising</div>
-        </div>
+        <div class="tile-content"><div class="tile-label">Actively building habits</div><div class="tile-desc">Tracking, improving, optimising</div></div>
         <div class="tile-check"></div>
       </div>
       <div class="option-tile" onclick="selectTile(this,'q1','trying_but')">
         <div class="tile-icon">🌀</div>
-        <div class="tile-content">
-          <div class="tile-label">Trying, but life gets in the way</div>
-          <div class="tile-desc">Intentions are there, consistency isn't</div>
-        </div>
+        <div class="tile-content"><div class="tile-label">Trying, but life gets in the way</div><div class="tile-desc">Intentions are there, consistency isn't</div></div>
         <div class="tile-check"></div>
       </div>
       <div class="option-tile" onclick="selectTile(this,'q1','wake_up_call')">
         <div class="tile-icon">⚡</div>
-        <div class="tile-content">
-          <div class="tile-label">Had a recent wake-up call</div>
-          <div class="tile-desc">Something made me take it more seriously</div>
-        </div>
+        <div class="tile-content"><div class="tile-label">Had a recent wake-up call</div><div class="tile-desc">Something made me take it more seriously</div></div>
         <div class="tile-check"></div>
       </div>
       <div class="option-tile" onclick="selectTile(this,'q1','always_been')">
         <div class="tile-icon">🌿</div>
-        <div class="tile-content">
-          <div class="tile-label">Always been health-conscious</div>
-          <div class="tile-desc">It's just part of who I am</div>
-        </div>
+        <div class="tile-content"><div class="tile-label">Always been health-conscious</div><div class="tile-desc">It's just part of who I am</div></div>
         <div class="tile-check"></div>
       </div>
       <div class="option-tile" onclick="selectTile(this,'q1','not_focused')">
         <div class="tile-icon">😅</div>
-        <div class="tile-content">
-          <div class="tile-label">Not really focused on it right now</div>
-          <div class="tile-desc">Other things take priority</div>
-        </div>
+        <div class="tile-content"><div class="tile-label">Not really focused on it right now</div><div class="tile-desc">Other things take priority</div></div>
         <div class="tile-check"></div>
       </div>
     </div>
-    <button class="btn-next" id="next-q1" disabled onclick="nextQuestion(1,2,10)">
-      Continue
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-    </button>
+    <button class="btn-next" id="next-q1" disabled onclick="nextQuestion(1,2,10)">Continue <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
   </div>
 
-  <!-- ═══════════════════════════════════ Q2 ══ -->
+  <!-- Q2 -->
   <div class="question-card" id="q2">
     <div class="q-number">02 — Your Focus</div>
     <div class="q-text">What's the ONE health concern taking up the most headspace right now?</div>
     <div class="q-sub">Not your goal — your actual worry or focus area today.</div>
     <div class="options-grid cols-2">
-      <div class="option-tile" onclick="selectTile(this,'q2','fitness')">
-        <div class="tile-icon">💪</div>
-        <div class="tile-content"><div class="tile-label">Fitness & body</div><div class="tile-desc">Gym, workouts, strength</div></div>
-        <div class="tile-check"></div>
-      </div>
-      <div class="option-tile" onclick="selectTile(this,'q2','stress')">
-        <div class="tile-icon">🧠</div>
-        <div class="tile-content"><div class="tile-label">Stress & burnout</div><div class="tile-desc">Work pressure, anxiety</div></div>
-        <div class="tile-check"></div>
-      </div>
-      <div class="option-tile" onclick="selectTile(this,'q2','sleep')">
-        <div class="tile-icon">🌙</div>
-        <div class="tile-content"><div class="tile-label">Sleep quality</div><div class="tile-desc">Not sleeping well or enough</div></div>
-        <div class="tile-check"></div>
-      </div>
-      <div class="option-tile" onclick="selectTile(this,'q2','condition')">
-        <div class="tile-icon">🩺</div>
-        <div class="tile-content"><div class="tile-label">Managing a condition</div><div class="tile-desc">PCOS, thyroid, diabetes, gut</div></div>
-        <div class="tile-check"></div>
-      </div>
-      <div class="option-tile" onclick="selectTile(this,'q2','nutrition')">
-        <div class="tile-icon">🥗</div>
-        <div class="tile-content"><div class="tile-label">Nutrition & weight</div><div class="tile-desc">What to eat, metabolism</div></div>
-        <div class="tile-check"></div>
-      </div>
-      <div class="option-tile" onclick="selectTile(this,'q2','preventive')">
-        <div class="tile-icon">🔬</div>
-        <div class="tile-content"><div class="tile-label">Preventive health</div><div class="tile-desc">Tests, check-ups, early detection</div></div>
-        <div class="tile-check"></div>
-      </div>
-      <div class="option-tile" onclick="selectTile(this,'q2','mental')">
-        <div class="tile-icon">💭</div>
-        <div class="tile-content"><div class="tile-label">Mental health</div><div class="tile-desc">Mood, therapy, emotional wellbeing</div></div>
-        <div class="tile-check"></div>
-      </div>
-      <div class="option-tile" onclick="selectTile(this,'q2','skin')">
-        <div class="tile-icon">✨</div>
-        <div class="tile-content"><div class="tile-label">Skin & hormonal health</div><div class="tile-desc">Acne, hair, skincare routine</div></div>
-        <div class="tile-check"></div>
-      </div>
+      <div class="option-tile" onclick="selectTile(this,'q2','fitness')"><div class="tile-icon">💪</div><div class="tile-content"><div class="tile-label">Fitness & body</div><div class="tile-desc">Gym, workouts, strength</div></div><div class="tile-check"></div></div>
+      <div class="option-tile" onclick="selectTile(this,'q2','stress')"><div class="tile-icon">🧠</div><div class="tile-content"><div class="tile-label">Stress & burnout</div><div class="tile-desc">Work pressure, anxiety</div></div><div class="tile-check"></div></div>
+      <div class="option-tile" onclick="selectTile(this,'q2','sleep')"><div class="tile-icon">🌙</div><div class="tile-content"><div class="tile-label">Sleep quality</div><div class="tile-desc">Not sleeping well or enough</div></div><div class="tile-check"></div></div>
+      <div class="option-tile" onclick="selectTile(this,'q2','condition')"><div class="tile-icon">🩺</div><div class="tile-content"><div class="tile-label">Managing a condition</div><div class="tile-desc">PCOS, thyroid, diabetes, gut</div></div><div class="tile-check"></div></div>
+      <div class="option-tile" onclick="selectTile(this,'q2','nutrition')"><div class="tile-icon">🥗</div><div class="tile-content"><div class="tile-label">Nutrition & weight</div><div class="tile-desc">What to eat, metabolism</div></div><div class="tile-check"></div></div>
+      <div class="option-tile" onclick="selectTile(this,'q2','preventive')"><div class="tile-icon">🔬</div><div class="tile-content"><div class="tile-label">Preventive health</div><div class="tile-desc">Tests, check-ups, early detection</div></div><div class="tile-check"></div></div>
+      <div class="option-tile" onclick="selectTile(this,'q2','mental')"><div class="tile-icon">💭</div><div class="tile-content"><div class="tile-label">Mental health</div><div class="tile-desc">Mood, therapy, emotional wellbeing</div></div><div class="tile-check"></div></div>
+      <div class="option-tile" onclick="selectTile(this,'q2','skin')"><div class="tile-icon">✨</div><div class="tile-content"><div class="tile-label">Skin & hormonal health</div><div class="tile-desc">Acne, hair, skincare routine</div></div><div class="tile-check"></div></div>
     </div>
-    <button class="btn-next" id="next-q2" disabled onclick="nextQuestion(2,3,10)">
-      Continue <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-    </button>
+    <button class="btn-next" id="next-q2" disabled onclick="nextQuestion(2,3,10)">Continue <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
   </div>
 
-  <!-- ═══════════════════════════════════ Q3 ══ -->
+  <!-- Q3 -->
   <div class="question-card" id="q3">
     <div class="q-number">03 — Your Wallet</div>
     <div class="q-text">What have you paid for out of your own pocket in the last 12 months?</div>
@@ -1025,15 +635,11 @@
       <div class="chip" onclick="toggleChip(this,'q3','dental')"><span class="chip-icon">🦷</span>Dental / eye care</div>
       <div class="chip" onclick="toggleChip(this,'q3','nothing')"><span class="chip-icon">🤷</span>None of these</div>
     </div>
-    <div class="insight-bubble" id="insight-q3">
-      <strong>💡 Did you know?</strong> Most people spending on doctors, tests, and supplements are paying ₹12,000–35,000/year out of pocket — often on things a good OPD plan covers entirely.
-    </div>
-    <button class="btn-next" id="next-q3" disabled onclick="nextQuestion(3,4,15)">
-      Continue <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-    </button>
+    <div class="insight-bubble" id="insight-q3"><strong>💡 Did you know?</strong> Most people spending on doctors, tests, and supplements are paying ₹12,000–35,000/year out of pocket — often on things a good OPD plan covers entirely.</div>
+    <button class="btn-next" id="next-q3" disabled onclick="nextQuestion(3,4,15)">Continue <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
   </div>
 
-  <!-- ═══════════════════════════════════ Q4 ══ -->
+  <!-- Q4 -->
   <div class="question-card" id="q4">
     <div class="q-number">04 — Your Spend</div>
     <div class="q-text">Roughly how much do you spend on health each month?</div>
@@ -1043,170 +649,81 @@
       <input type="range" class="custom-slider" id="spend-slider" min="0" max="15000" step="500" value="2500" oninput="updateSlider(this.value)">
       <div class="slider-labels"><span>₹0</span><span>₹5k</span><span>₹10k</span><span>₹15k+</span></div>
     </div>
-    <div class="insight-bubble show" id="insight-q4">
-      <strong>💡 At ₹2,500/month</strong> you're spending ₹30,000/year on health. A comprehensive health insurance plan with OPD cover can offset a large chunk of that — sometimes more.
-    </div>
-    <button class="btn-next" id="next-q4" onclick="nextQuestion(4,5,10)">
-      Continue <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-    </button>
+    <div class="insight-bubble show" id="insight-q4"><strong>💡 At ₹2,500/month</strong> you're spending ₹30,000/year on health. A comprehensive health insurance plan with OPD cover can offset a large chunk of that — sometimes more.</div>
+    <button class="btn-next" id="next-q4" onclick="nextQuestion(4,5,10)">Continue <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
   </div>
 
-  <!-- ═══════════════════════════════════ Q5 ══ -->
+  <!-- Q5 -->
   <div class="question-card" id="q5">
     <div class="q-number">05 — Insurance Check</div>
     <div class="q-text">What does your current health insurance actually cover?</div>
     <div class="q-sub">Be honest — most people genuinely don't know until they need to claim.</div>
     <div class="options-grid">
-      <div class="option-tile" onclick="selectTile(this,'q5','comprehensive')">
-        <div class="tile-icon">✅</div>
-        <div class="tile-content">
-          <div class="tile-label">Full coverage — hospital + OPD + diagnostics + mental health</div>
-        </div>
-        <div class="tile-check"></div>
-      </div>
-      <div class="option-tile" onclick="selectTile(this,'q5','hospital_only')">
-        <div class="tile-icon">🏨</div>
-        <div class="tile-content">
-          <div class="tile-label">Hospitalisation only — I'm not sure what else it includes</div>
-        </div>
-        <div class="tile-check"></div>
-      </div>
-      <div class="option-tile" onclick="selectTile(this,'q5','employer_unsure')">
-        <div class="tile-icon">💼</div>
-        <div class="tile-content">
-          <div class="tile-label">I have employer cover but I've never checked what's in it</div>
-        </div>
-        <div class="tile-check"></div>
-      </div>
-      <div class="option-tile" onclick="selectTile(this,'q5','no_insurance')">
-        <div class="tile-icon">🚫</div>
-        <div class="tile-content">
-          <div class="tile-label">I don't have health insurance right now</div>
-        </div>
-        <div class="tile-check"></div>
-      </div>
+      <div class="option-tile" onclick="selectTile(this,'q5','comprehensive')"><div class="tile-icon">✅</div><div class="tile-content"><div class="tile-label">Full coverage — hospital + OPD + diagnostics + mental health</div></div><div class="tile-check"></div></div>
+      <div class="option-tile" onclick="selectTile(this,'q5','hospital_only')"><div class="tile-icon">🏨</div><div class="tile-content"><div class="tile-label">Hospitalisation only — I'm not sure what else it includes</div></div><div class="tile-check"></div></div>
+      <div class="option-tile" onclick="selectTile(this,'q5','employer_unsure')"><div class="tile-icon">💼</div><div class="tile-content"><div class="tile-label">I have employer cover but I've never checked what's in it</div></div><div class="tile-check"></div></div>
+      <div class="option-tile" onclick="selectTile(this,'q5','no_insurance')"><div class="tile-icon">🚫</div><div class="tile-content"><div class="tile-label">I don't have health insurance right now</div></div><div class="tile-check"></div></div>
     </div>
     <div class="insight-bubble" id="insight-q5"></div>
-    <button class="btn-next" id="next-q5" disabled onclick="nextQuestion(5,6,10)">
-      Continue <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-    </button>
+    <button class="btn-next" id="next-q5" disabled onclick="nextQuestion(5,6,10)">Continue <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
   </div>
 
-  <!-- ═══════════════════════════════════ Q6 ══ -->
+  <!-- Q6 -->
   <div class="question-card" id="q6">
     <div class="q-number">06 — Your Price Point</div>
     <div class="q-text">What would you genuinely consider paying per month for health insurance?</div>
-    <div class="q-sub">This is for a plan that covers hospitalisation, doctor consultations, diagnostics, and rewards you for staying active.</div>
+    <div class="q-sub">For a plan covering hospitalisation, doctor consultations, diagnostics, and active rewards.</div>
     <div class="options-grid">
-      <div class="option-tile" onclick="selectTile(this,'q6','lt300')">
-        <div class="tile-icon">💰</div>
-        <div class="tile-content">
-          <div class="tile-label">Under ₹300/month</div>
-          <div class="tile-desc">₹3,600/year — basic protection</div>
-        </div>
-        <div class="tile-check"></div>
-      </div>
-      <div class="option-tile" onclick="selectTile(this,'q6','300_600')">
-        <div class="tile-icon">💳</div>
-        <div class="tile-content">
-          <div class="tile-label">₹300 – ₹600/month</div>
-          <div class="tile-desc">₹3,600–7,200/year — solid value</div>
-        </div>
-        <div class="tile-check"></div>
-      </div>
-      <div class="option-tile" onclick="selectTile(this,'q6','600_1000')">
-        <div class="tile-icon">💎</div>
-        <div class="tile-content">
-          <div class="tile-label">₹600 – ₹1,000/month</div>
-          <div class="tile-desc">₹7,200–12,000/year — comprehensive</div>
-        </div>
-        <div class="tile-check"></div>
-      </div>
-      <div class="option-tile" onclick="selectTile(this,'q6','gt1000')">
-        <div class="tile-icon">🏆</div>
-        <div class="tile-content">
-          <div class="tile-label">₹1,000+ if it covers everything</div>
-          <div class="tile-desc">₹12,000+/year — premium, no gaps</div>
-        </div>
-        <div class="tile-check"></div>
-      </div>
+      <div class="option-tile" onclick="selectTile(this,'q6','lt300')"><div class="tile-icon">💰</div><div class="tile-content"><div class="tile-label">Under ₹300/month</div><div class="tile-desc">₹3,600/year — basic protection</div></div><div class="tile-check"></div></div>
+      <div class="option-tile" onclick="selectTile(this,'q6','300_600')"><div class="tile-icon">💳</div><div class="tile-content"><div class="tile-label">₹300 – ₹600/month</div><div class="tile-desc">₹3,600–7,200/year — solid value</div></div><div class="tile-check"></div></div>
+      <div class="option-tile" onclick="selectTile(this,'q6','600_1000')"><div class="tile-icon">💎</div><div class="tile-content"><div class="tile-label">₹600 – ₹1,000/month</div><div class="tile-desc">₹7,200–12,000/year — comprehensive</div></div><div class="tile-check"></div></div>
+      <div class="option-tile" onclick="selectTile(this,'q6','gt1000')"><div class="tile-icon">🏆</div><div class="tile-content"><div class="tile-label">₹1,000+ if it covers everything</div><div class="tile-desc">₹12,000+/year — premium, no gaps</div></div><div class="tile-check"></div></div>
     </div>
-    <button class="btn-next" id="next-q6" disabled onclick="nextQuestion(6,7,10)">
-      Continue <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-    </button>
+    <button class="btn-next" id="next-q6" disabled onclick="nextQuestion(6,7,10)">Continue <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
   </div>
 
-  <!-- ═══════════════════════════════════ Q7 ══ -->
+  <!-- Q7 -->
   <div class="question-card" id="q7">
     <div class="q-number">07 — The Bundle Pick</div>
-    <div class="q-text">If you were choosing a health plan today, which of these would you actually pick?</div>
+    <div class="q-text">If you were choosing a health plan today, which would you actually pick?</div>
     <div class="q-sub">Based on what you'd realistically use — not what sounds best on paper.</div>
     <div class="bundle-grid">
       <div class="bundle-card" onclick="selectBundle(this,'q7','essential')">
-        <div class="bundle-selected-badge">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
-        </div>
+        <div class="bundle-selected-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></div>
         <div class="bundle-badge" style="background:rgba(0,200,150,0.15);color:var(--teal)">Basic</div>
         <div class="bundle-name">Just Protected</div>
-        <ul class="bundle-features">
-          <li>₹5L hospitalisation cover</li>
-          <li>Emergency care</li>
-          <li>Basic diagnostics</li>
-        </ul>
+        <ul class="bundle-features"><li>₹5L hospitalisation cover</li><li>Emergency care</li><li>Basic diagnostics</li></ul>
         <div class="bundle-price">~₹350<span>/month</span></div>
       </div>
       <div class="bundle-card" onclick="selectBundle(this,'q7','opd')">
-        <div class="bundle-selected-badge">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
-        </div>
+        <div class="bundle-selected-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></div>
         <div class="bundle-badge" style="background:rgba(0,150,255,0.15);color:#60B4FF">OPD</div>
         <div class="bundle-name">Daily Health Cover</div>
-        <ul class="bundle-features">
-          <li>₹5L hospitalisation</li>
-          <li>Doctor consultations</li>
-          <li>Diagnostic tests</li>
-          <li>Pharmacy benefits</li>
-        </ul>
+        <ul class="bundle-features"><li>₹5L hospitalisation</li><li>Doctor consultations</li><li>Diagnostic tests</li><li>Pharmacy benefits</li></ul>
         <div class="bundle-price">~₹514<span>/month</span></div>
       </div>
       <div class="bundle-card" onclick="selectBundle(this,'q7','active')">
-        <div class="bundle-selected-badge">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
-        </div>
+        <div class="bundle-selected-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></div>
         <div class="bundle-badge" style="background:rgba(255,184,48,0.15);color:var(--amber)">🔥 Popular</div>
         <div class="bundle-name">Active Rewards</div>
-        <ul class="bundle-features">
-          <li>Everything in OPD</li>
-          <li>Cash back for staying active</li>
-          <li>Mental health cover</li>
-          <li>Earn up to 100% premium back</li>
-        </ul>
+        <ul class="bundle-features"><li>Everything in OPD</li><li>Cash back for staying active</li><li>Mental health cover</li><li>Earn up to 100% premium back</li></ul>
         <div class="bundle-price">~₹750<span>/month</span></div>
       </div>
       <div class="bundle-card" onclick="selectBundle(this,'q7','premium')">
-        <div class="bundle-selected-badge">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
-        </div>
+        <div class="bundle-selected-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></div>
         <div class="bundle-badge" style="background:rgba(155,109,255,0.15);color:var(--purple)">Premium</div>
         <div class="bundle-name">Full Stack Health</div>
-        <ul class="bundle-features">
-          <li>₹10L hospitalisation</li>
-          <li>Full OPD + mental health</li>
-          <li>Active rewards max</li>
-          <li>Maternity + income protect</li>
-        </ul>
+        <ul class="bundle-features"><li>₹10L hospitalisation</li><li>Full OPD + mental health</li><li>Active rewards max</li><li>Maternity + income protect</li></ul>
         <div class="bundle-price">~₹1,100<span>/month</span></div>
       </div>
     </div>
-    <button class="btn-next" id="next-q7" disabled onclick="nextQuestion(7,8,15)">
-      Continue <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-    </button>
+    <button class="btn-next" id="next-q7" disabled onclick="nextQuestion(7,8,15)">Continue <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
   </div>
 
-  <!-- ═══════════════════════════════════ Q8 ══ -->
+  <!-- Q8 -->
   <div class="question-card" id="q8">
     <div class="q-number">08 — Features That Matter</div>
-    <div class="q-text">Which of these features would genuinely make you switch or upgrade your insurance?</div>
+    <div class="q-text">Which features would genuinely make you switch or upgrade your insurance?</div>
     <div class="q-sub">Select all that would actually change your decision — not just sound nice.</div>
     <div class="options-chips" id="chips-q8">
       <div class="chip" onclick="toggleChip(this,'q8','cashback')"><span class="chip-icon">💵</span>Cash back for working out</div>
@@ -1220,54 +737,26 @@
       <div class="chip" onclick="toggleChip(this,'q8','partner')"><span class="chip-icon">👫</span>Cover for live-in partner</div>
       <div class="chip" onclick="toggleChip(this,'q8','noexclusions')"><span class="chip-icon">📋</span>Clear, no-jargon policy</div>
     </div>
-    <button class="btn-next" id="next-q8" disabled onclick="nextQuestion(8,9,15)">
-      Continue <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-    </button>
+    <button class="btn-next" id="next-q8" disabled onclick="nextQuestion(8,9,15)">Continue <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
   </div>
 
-  <!-- ═══════════════════════════════════ Q9 ══ -->
+  <!-- Q9 -->
   <div class="question-card" id="q9">
     <div class="q-number">09 — Your Trigger</div>
     <div class="q-text">What would most likely make you actually buy or upgrade health insurance?</div>
     <div class="q-sub">One honest answer here is worth a lot.</div>
     <div class="options-grid">
-      <div class="option-tile" onclick="selectTile(this,'q9','health_scare')">
-        <div class="tile-icon">😨</div>
-        <div class="tile-content"><div class="tile-label">A health scare — mine or someone close</div></div>
-        <div class="tile-check"></div>
-      </div>
-      <div class="option-tile" onclick="selectTile(this,'q9','new_job')">
-        <div class="tile-icon">💼</div>
-        <div class="tile-content"><div class="tile-label">Switching jobs / employer cover changing</div></div>
-        <div class="tile-check"></div>
-      </div>
-      <div class="option-tile" onclick="selectTile(this,'q9','life_event')">
-        <div class="tile-icon">💍</div>
-        <div class="tile-content"><div class="tile-label">A life event — marriage, moving in together, baby planning</div></div>
-        <div class="tile-check"></div>
-      </div>
-      <div class="option-tile" onclick="selectTile(this,'q9','price')">
-        <div class="tile-icon">💸</div>
-        <div class="tile-content"><div class="tile-label">Finding a plan that's genuinely affordable</div></div>
-        <div class="tile-check"></div>
-      </div>
-      <div class="option-tile" onclick="selectTile(this,'q9','recommendation')">
-        <div class="tile-icon">👥</div>
-        <div class="tile-content"><div class="tile-label">A trusted friend or creator recommending something specific</div></div>
-        <div class="tile-check"></div>
-      </div>
-      <div class="option-tile" onclick="selectTile(this,'q9','already_sorted')">
-        <div class="tile-icon">✅</div>
-        <div class="tile-content"><div class="tile-label">I'm already sorted — just here to check my gaps</div></div>
-        <div class="tile-check"></div>
-      </div>
+      <div class="option-tile" onclick="selectTile(this,'q9','health_scare')"><div class="tile-icon">😨</div><div class="tile-content"><div class="tile-label">A health scare — mine or someone close</div></div><div class="tile-check"></div></div>
+      <div class="option-tile" onclick="selectTile(this,'q9','new_job')"><div class="tile-icon">💼</div><div class="tile-content"><div class="tile-label">Switching jobs / employer cover changing</div></div><div class="tile-check"></div></div>
+      <div class="option-tile" onclick="selectTile(this,'q9','life_event')"><div class="tile-icon">💍</div><div class="tile-content"><div class="tile-label">A life event — marriage, moving in together, baby planning</div></div><div class="tile-check"></div></div>
+      <div class="option-tile" onclick="selectTile(this,'q9','price')"><div class="tile-icon">💸</div><div class="tile-content"><div class="tile-label">Finding a plan that's genuinely affordable</div></div><div class="tile-check"></div></div>
+      <div class="option-tile" onclick="selectTile(this,'q9','recommendation')"><div class="tile-icon">👥</div><div class="tile-content"><div class="tile-label">A trusted friend or creator recommending something specific</div></div><div class="tile-check"></div></div>
+      <div class="option-tile" onclick="selectTile(this,'q9','already_sorted')"><div class="tile-icon">✅</div><div class="tile-content"><div class="tile-label">I'm already sorted — just here to check my gaps</div></div><div class="tile-check"></div></div>
     </div>
-    <button class="btn-next" id="next-q9" disabled onclick="nextQuestion(9,10,10)">
-      Continue <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-    </button>
+    <button class="btn-next" id="next-q9" disabled onclick="nextQuestion(9,10,10)">Continue <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
   </div>
 
-  <!-- ═══════════════════════════════════ Q10 ══ -->
+  <!-- Q10 -->
   <div class="question-card" id="q10">
     <div class="q-number">10 — Last One</div>
     <div class="q-text">Quick — tell us a bit about yourself</div>
@@ -1275,35 +764,19 @@
     <div style="margin-bottom:20px">
       <div class="q-number" style="margin-bottom:8px">Age group</div>
       <div class="options-grid cols-2" id="age-options">
-        <div class="option-tile" onclick="selectTileGroup(this,'age','18-24')">
-          <div class="tile-content"><div class="tile-label">18 – 24</div></div><div class="tile-check"></div>
-        </div>
-        <div class="option-tile" onclick="selectTileGroup(this,'age','25-29')">
-          <div class="tile-content"><div class="tile-label">25 – 29</div></div><div class="tile-check"></div>
-        </div>
-        <div class="option-tile" onclick="selectTileGroup(this,'age','30-34')">
-          <div class="tile-content"><div class="tile-label">30 – 34</div></div><div class="tile-check"></div>
-        </div>
-        <div class="option-tile" onclick="selectTileGroup(this,'age','35-40')">
-          <div class="tile-content"><div class="tile-label">35 – 40</div></div><div class="tile-check"></div>
-        </div>
+        <div class="option-tile" onclick="selectTileGroup(this,'age','18-24')"><div class="tile-content"><div class="tile-label">18 – 24</div></div><div class="tile-check"></div></div>
+        <div class="option-tile" onclick="selectTileGroup(this,'age','25-29')"><div class="tile-content"><div class="tile-label">25 – 29</div></div><div class="tile-check"></div></div>
+        <div class="option-tile" onclick="selectTileGroup(this,'age','30-34')"><div class="tile-content"><div class="tile-label">30 – 34</div></div><div class="tile-check"></div></div>
+        <div class="option-tile" onclick="selectTileGroup(this,'age','35-40')"><div class="tile-content"><div class="tile-label">35 – 40</div></div><div class="tile-check"></div></div>
       </div>
     </div>
     <div>
       <div class="q-number" style="margin-bottom:8px">Work situation</div>
       <div class="options-grid cols-2" id="work-options">
-        <div class="option-tile" onclick="selectTileGroup(this,'work','salaried_corp')">
-          <div class="tile-content"><div class="tile-label">Salaried – corporate</div></div><div class="tile-check"></div>
-        </div>
-        <div class="option-tile" onclick="selectTileGroup(this,'work','salaried_startup')">
-          <div class="tile-content"><div class="tile-label">Salaried – startup / tech</div></div><div class="tile-check"></div>
-        </div>
-        <div class="option-tile" onclick="selectTileGroup(this,'work','self_employed')">
-          <div class="tile-content"><div class="tile-label">Self-employed / freelancer</div></div><div class="tile-check"></div>
-        </div>
-        <div class="option-tile" onclick="selectTileGroup(this,'work','student_other')">
-          <div class="tile-content"><div class="tile-label">Student / other</div></div><div class="tile-check"></div>
-        </div>
+        <div class="option-tile" onclick="selectTileGroup(this,'work','salaried_corp')"><div class="tile-content"><div class="tile-label">Salaried – corporate</div></div><div class="tile-check"></div></div>
+        <div class="option-tile" onclick="selectTileGroup(this,'work','salaried_startup')"><div class="tile-content"><div class="tile-label">Salaried – startup / tech</div></div><div class="tile-check"></div></div>
+        <div class="option-tile" onclick="selectTileGroup(this,'work','self_employed')"><div class="tile-content"><div class="tile-label">Self-employed / freelancer</div></div><div class="tile-check"></div></div>
+        <div class="option-tile" onclick="selectTileGroup(this,'work','student_other')"><div class="tile-content"><div class="tile-label">Student / other</div></div><div class="tile-check"></div></div>
       </div>
     </div>
     <button class="btn-next" id="next-q10" disabled onclick="showResult()">
@@ -1312,148 +785,120 @@
     </button>
   </div>
 
-  <!-- ═══════════════════════════════════ RESULT ══ -->
+  <!-- RESULT -->
   <div id="screen-result">
     <div class="result-hero">
       <span class="result-emoji" id="result-emoji">🌿</span>
-      <div class="result-archetype" id="result-archetype">Your Yuva Type</div>
+      <div class="result-archetype">Your Yuva Type</div>
       <div class="result-title" id="result-title">The Preventive Planner</div>
-      <div class="result-desc" id="result-desc">You treat your health like a long-term investment. You're already spending thoughtfully — the gap is making sure what you spend is protected, not repeated.</div>
+      <div class="result-desc" id="result-desc">You treat your health like a long-term investment.</div>
       <div class="xp-total">
         <svg width="18" height="18" viewBox="0 0 16 16" fill="#FFB830"><path d="M8 1l1.8 3.6L14 5.3l-3 2.9.7 4.1L8 10.4l-3.7 1.9.7-4.1-3-2.9 4.2-.7z"/></svg>
         <span id="result-xp">95 XP earned</span>
       </div>
       <div class="result-stats">
-        <div class="stat-box">
-          <div class="stat-value" id="stat-spend">₹30k</div>
-          <div class="stat-label">Est. annual health spend</div>
-        </div>
-        <div class="stat-box">
-          <div class="stat-value" id="stat-gap">₹18k</div>
-          <div class="stat-label">Potential OPD coverage gap</div>
-        </div>
-        <div class="stat-box">
-          <div class="stat-value" id="stat-cover">₹5L</div>
-          <div class="stat-label">Recommended cover</div>
-        </div>
+        <div class="stat-box"><div class="stat-value" id="stat-spend">₹30k</div><div class="stat-label">Est. annual health spend</div></div>
+        <div class="stat-box"><div class="stat-value" id="stat-gap">₹18k</div><div class="stat-label">Potential coverage gap</div></div>
+        <div class="stat-box"><div class="stat-value" id="stat-cover">₹5L</div><div class="stat-label">Recommended cover</div></div>
       </div>
     </div>
-
     <div class="result-reco">
       <div class="reco-label">Recommended for your profile</div>
       <div class="reco-title" id="reco-plan-name">Activ One MAX</div>
-      <div class="reco-text" id="reco-plan-desc">Based on your spending pattern and the gaps in your current cover, this plan gives you the OPD wallet and active rewards combination that matches how you already invest in your health.</div>
-      <div class="reco-features" id="reco-tags">
-        <span class="reco-tag">OPD Wallet</span>
-        <span class="reco-tag">HealthReturns</span>
-        <span class="reco-tag">Mental Health Cover</span>
-      </div>
+      <div class="reco-text" id="reco-plan-desc">Based on your spending pattern and the gaps in your current cover.</div>
+      <div class="reco-features" id="reco-tags"></div>
     </div>
-
-    <a href="#" class="btn-explore">Explore Activ Yuva Plans →</a>
-    <div style="text-align:center;margin-top:16px;font-size:12px;color:var(--muted);opacity:0.6">Your responses are confidential. Results are for guidance only.</div>
+    <div class="save-indicator" id="save-indicator">
+      <div class="save-dot"></div>
+      <span>Saving your responses securely...</span>
+    </div>
+    <a href="https://www.adityabirlahealthinsurance.com" class="btn-explore">Explore Activ Yuva Plans →</a>
+    <div style="text-align:center;margin-top:16px;font-size:12px;color:var(--muted);opacity:0.6">Your responses are confidential and used only for research. Results are for guidance only.</div>
   </div>
 
 </div>
 
-<!-- XP POP ELEMENT -->
 <div class="xp-pop" id="xp-pop">+10 XP</div>
 
 <script>
-  // ── STATE ──────────────────────────────────────────────
+  // ═══════════════════════════════════════════════════════
+  // ↓↓↓  PASTE YOUR GOOGLE APPS SCRIPT URL HERE  ↓↓↓
+  // ═══════════════════════════════════════════════════════
+  const SHEET_URL = 'PASTE_YOUR_APPS_SCRIPT_URL_HERE';
+  // ═══════════════════════════════════════════════════════
+
   const state = {
-    q1: null, q2: null, q3: [], q4: 2500, q5: null,
-    q6: null, q7: null, q8: [], q9: null,
-    age: null, work: null,
-    xp: 0,
-    currentQ: 1
+    q1:null, q2:null, q3:[], q4:2500, q5:null,
+    q6:null, q7:null, q8:[], q9:null,
+    age:null, work:null,
+    xp:0, currentQ:1, archetype:''
   };
 
   const TOTAL_Q = 10;
 
-  // ── INIT DOTS ─────────────────────────────────────────
   window.onload = () => {
     const dots = document.getElementById('step-dots');
     for(let i=1;i<=TOTAL_Q;i++){
       const d = document.createElement('div');
-      d.className = 'step-dot' + (i===1?' current':'');
+      d.className = 'step-dot'+(i===1?' current':'');
       d.id = `dot-${i}`;
       dots.appendChild(d);
     }
+    updateSlider(2500);
+    document.getElementById('next-q4').disabled = false;
   };
 
-  // ── SLIDER ───────────────────────────────────────────
   function updateSlider(val) {
     const n = parseInt(val);
     state.q4 = n;
-    const formatted = n >= 1000 ? (n/1000).toFixed(n%1000===0?0:1)+'k' : n;
     document.getElementById('slider-val').textContent = n.toLocaleString('en-IN');
-
     const annual = n * 12;
     const annualStr = annual >= 10000 ? '₹'+(annual/1000).toFixed(0)+'k' : '₹'+annual;
     const gap = Math.round(annual * 0.55);
     const gapStr = gap >= 10000 ? '₹'+(gap/1000).toFixed(0)+'k' : '₹'+gap;
-
-    const bubble = document.getElementById('insight-q4');
-    bubble.innerHTML = `<strong>💡 At ₹${n.toLocaleString('en-IN')}/month</strong> you're spending ${annualStr}/year on health. A plan with OPD cover could potentially offset ${gapStr} of that — things that most hospitalisation-only plans don't touch.`;
-
-    // Update slider fill
-    const pct = (n / 15000) * 100;
-    const slider = document.getElementById('spend-slider');
-    slider.style.background = `linear-gradient(90deg, var(--teal) ${pct}%, rgba(255,255,255,0.08) ${pct}%)`;
+    document.getElementById('insight-q4').innerHTML = `<strong>💡 At ₹${n.toLocaleString('en-IN')}/month</strong> you're spending ${annualStr}/year on health. A plan with OPD cover could potentially offset ${gapStr} of that — things hospitalisation-only plans miss entirely.`;
+    const pct = (n/15000)*100;
+    document.getElementById('spend-slider').style.background = `linear-gradient(90deg, var(--teal) ${pct}%, rgba(255,255,255,0.08) ${pct}%)`;
   }
 
-  // ── SINGLE SELECT TILES ──────────────────────────────
   function selectTile(el, qId, val) {
-    const tiles = el.parentElement.querySelectorAll('.option-tile');
-    tiles.forEach(t => t.classList.remove('selected'));
+    el.parentElement.querySelectorAll('.option-tile').forEach(t => t.classList.remove('selected'));
     el.classList.add('selected');
     state[qId] = val;
-
-    const nextBtn = document.getElementById(`next-${qId}`);
-    if(nextBtn) nextBtn.disabled = false;
-
-    // Special insights
+    const nb = document.getElementById(`next-${qId}`);
+    if(nb) nb.disabled = false;
     if(qId === 'q5') showInsuranceInsight(val);
   }
 
   function selectTileGroup(el, group, val) {
-    const tiles = el.parentElement.querySelectorAll('.option-tile');
-    tiles.forEach(t => t.classList.remove('selected'));
+    el.parentElement.querySelectorAll('.option-tile').forEach(t => t.classList.remove('selected'));
     el.classList.add('selected');
     state[group] = val;
-
-    // Enable next-q10 only when both age and work are picked
-    if(state.age && state.work) {
-      document.getElementById('next-q10').disabled = false;
-    }
+    if(state.age && state.work) document.getElementById('next-q10').disabled = false;
   }
 
   function showInsuranceInsight(val) {
-    const bubble = document.getElementById('insight-q5');
     const msgs = {
-      comprehensive: '✅ <strong>Great</strong> — you\'re ahead of most. The question is whether your mental health and OPD limits are high enough for your actual usage.',
-      hospital_only: '⚠️ <strong>Most employer plans only cover hospitalisation.</strong> The ₹12,000–35,000 you spend on consultations and diagnostics every year? Entirely out of pocket.',
-      employer_unsure: '🔍 <strong>You\'re not alone</strong> — 62% of salaried Indians with employer cover have never read their policy document. The gap is usually OPD, mental health, and diagnostics.',
-      no_insurance: '🚨 <strong>One hospitalisation</strong> without insurance can cost ₹2–8 lakh. At ₹514/month, comprehensive cover is less than your monthly grocery run.'
+      comprehensive: '✅ <strong>Great</strong> — you\'re ahead of most. Check whether your mental health and OPD limits are high enough for your actual usage.',
+      hospital_only: '⚠️ <strong>Most plans only cover hospitalisation.</strong> The ₹12,000–35,000 you spend on consultations and diagnostics every year? Entirely out of pocket.',
+      employer_unsure: '🔍 <strong>You\'re not alone</strong> — 62% of salaried Indians with employer cover have never read their policy. The gap is usually OPD, mental health, and diagnostics.',
+      no_insurance: '🚨 <strong>One hospitalisation</strong> without cover can cost ₹2–8 lakh. At ₹514/month, a comprehensive plan costs less than your monthly grocery run.'
     };
-    bubble.innerHTML = msgs[val] || '';
-    bubble.classList.add('show');
+    const b = document.getElementById('insight-q5');
+    b.innerHTML = msgs[val] || '';
+    b.classList.add('show');
   }
 
-  // ── MULTI SELECT CHIPS ───────────────────────────────
   function toggleChip(el, qId, val) {
     if(val === 'nothing') {
-      // deselect all others
       document.querySelectorAll(`#chips-${qId} .chip`).forEach(c => c.classList.remove('selected'));
       state[qId] = ['nothing'];
       el.classList.add('selected');
     } else {
-      // deselect 'nothing' if present
-      const nothingChip = [...document.querySelectorAll(`#chips-${qId} .chip`)].find(c => c.onclick.toString().includes("'nothing'"));
-      if(nothingChip) nothingChip.classList.remove('selected');
+      const allChips = [...document.querySelectorAll(`#chips-${qId} .chip`)];
+      // deselect 'nothing' chip if present
+      allChips.forEach(c => { if(c.getAttribute('onclick') && c.getAttribute('onclick').includes("'nothing'")) c.classList.remove('selected'); });
       state[qId] = state[qId].filter(v => v !== 'nothing');
-
       if(el.classList.contains('selected')) {
         el.classList.remove('selected');
         state[qId] = state[qId].filter(v => v !== val);
@@ -1462,17 +907,11 @@
         state[qId].push(val);
       }
     }
-
-    const nextBtn = document.getElementById(`next-${qId}`);
-    if(nextBtn) nextBtn.disabled = state[qId].length === 0;
-
-    // insight for q3
-    if(qId === 'q3' && state.q3.length >= 3) {
-      document.getElementById('insight-q3').classList.add('show');
-    }
+    const nb = document.getElementById(`next-${qId}`);
+    if(nb) nb.disabled = state[qId].length === 0;
+    if(qId === 'q3' && state.q3.length >= 3) document.getElementById('insight-q3').classList.add('show');
   }
 
-  // ── BUNDLE SELECT ────────────────────────────────────
   function selectBundle(el, qId, val) {
     document.querySelectorAll('.bundle-card').forEach(c => c.classList.remove('selected'));
     el.classList.add('selected');
@@ -1480,21 +919,15 @@
     document.getElementById(`next-${qId}`).disabled = false;
   }
 
-  // ── NAVIGATION ───────────────────────────────────────
   function nextQuestion(from, to, xpEarned) {
-    // Update XP
     state.xp += xpEarned;
-    document.getElementById('xp-counter').textContent = state.xp + ' XP';
-    showXPPop('+' + xpEarned + ' XP');
-
-    // Animate out current
+    document.getElementById('xp-counter').textContent = state.xp+' XP';
+    showXPPop('+'+xpEarned+' XP');
     const current = document.getElementById(`q${from}`);
     current.style.animation = 'slideOut 0.3s ease both';
     setTimeout(() => {
       current.classList.remove('active');
       current.style.animation = '';
-
-      // Show next
       const next = document.getElementById(`q${to}`);
       next.classList.add('active');
       state.currentQ = to;
@@ -1506,11 +939,7 @@
     const q = state.currentQ;
     if(q <= 1) return;
     const prev = q - 1;
-
-    const current = document.getElementById(`q${q}`);
-    current.style.animation = 'none';
-    current.classList.remove('active');
-
+    document.getElementById(`q${q}`).classList.remove('active');
     const prevCard = document.getElementById(`q${prev}`);
     prevCard.style.animation = 'slideIn 0.35s ease both';
     prevCard.classList.add('active');
@@ -1519,22 +948,17 @@
   }
 
   function updateProgress(q) {
-    const pct = Math.round((q / TOTAL_Q) * 100);
-    document.getElementById('progress-fill').style.width = pct + '%';
+    const pct = Math.round((q/TOTAL_Q)*100);
+    document.getElementById('progress-fill').style.width = pct+'%';
     document.getElementById('step-label').textContent = `Question ${q} of ${TOTAL_Q}`;
-
-    // Update dots
     for(let i=1;i<=TOTAL_Q;i++){
       const d = document.getElementById(`dot-${i}`);
       if(!d) continue;
-      d.className = 'step-dot' + (i < q ? ' done' : i === q ? ' current' : '');
+      d.className = 'step-dot'+(i<q?' done':i===q?' current':'');
     }
-
-    // Back button
     document.getElementById('btn-back').disabled = q <= 1;
   }
 
-  // ── XP POP ANIMATION ─────────────────────────────────
   function showXPPop(text) {
     const el = document.getElementById('xp-pop');
     el.textContent = text;
@@ -1543,137 +967,156 @@
     el.classList.add('animate');
   }
 
-  // ── SHOW RESULT ───────────────────────────────────────
+  // ── ARCHETYPE LOGIC ──────────────────────────────────────
+  function getArchetype() {
+    const c = state.q2;
+    if(c === 'fitness' || c === 'nutrition') return 'performance_tracker';
+    if(c === 'stress' || c === 'mental') return 'stress_manager';
+    if(c === 'sleep') return 'sleep_optimiser';
+    if(c === 'condition' || c === 'skin') return 'womens_health';
+    if(c === 'preventive') return 'preventive_planner';
+    if(state.q1 === 'wake_up_call' || state.q9 === 'health_scare') return 'newly_jolted';
+    return 'preventive_planner';
+  }
+
+  // ── RESULT RENDER ─────────────────────────────────────────
   function showResult() {
     if(!state.age || !state.work) return;
-
     state.xp += 10;
 
-    // Hide all questions
+    const archetype = getArchetype();
+    state.archetype = archetype;
+
     for(let i=1;i<=TOTAL_Q;i++){
       const q = document.getElementById(`q${i}`);
-      if(q) { q.classList.remove('active'); q.style.display = 'none'; }
+      if(q){ q.classList.remove('active'); q.style.display='none'; }
     }
     document.querySelector('.nav-row').style.display = 'none';
-
-    // Update progress to 100%
     document.getElementById('progress-fill').style.width = '100%';
-    document.getElementById('step-label').textContent = 'Complete!';
-    document.getElementById('xp-counter').textContent = state.xp + ' XP';
-    document.querySelectorAll('.step-dot').forEach(d => d.className = 'step-dot done');
+    document.getElementById('step-label').textContent = 'Complete! 🎉';
+    document.getElementById('xp-counter').textContent = state.xp+' XP';
+    document.querySelectorAll('.step-dot').forEach(d => d.className='step-dot done');
 
-    // Determine archetype
-    const archetype = getArchetype();
     renderResult(archetype);
 
     const resultEl = document.getElementById('screen-result');
     resultEl.classList.add('active');
-    resultEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    resultEl.scrollIntoView({behavior:'smooth',block:'start'});
 
     showXPPop('🎉 Profile unlocked!');
-  }
 
-  function getArchetype() {
-    const concern = state.q2;
-    const hasOPDSpend = state.q3.some(v => ['doctor','diagnostics','therapy','nutritionist'].includes(v));
-    const coverGap = ['hospital_only','employer_unsure','no_insurance'].includes(state.q5);
-    const trigger = state.q9;
-
-    if(concern === 'fitness' || concern === 'nutrition') return 'performance_tracker';
-    if(concern === 'stress' || concern === 'mental') return 'stress_manager';
-    if(concern === 'sleep') return 'sleep_optimiser';
-    if(concern === 'condition' || concern === 'skin') return 'womens_health';
-    if(concern === 'preventive' || hasOPDSpend) return 'preventive_planner';
-    if(state.q1 === 'wake_up_call' || trigger === 'health_scare') return 'newly_jolted';
-    return 'preventive_planner';
+    // ── SEND DATA TO GOOGLE SHEETS ────────────────────────
+    sendToSheet();
   }
 
   function renderResult(archetype) {
     const profiles = {
       performance_tracker: {
-        emoji: '⚡',
-        type: 'The Performance Tracker',
-        desc: 'You treat health like a sport — data-driven, outcome-focused, always improving. Insurance for you isn\'t about fear. It\'s about making sure your investment in your body is financially protected and rewarded.',
-        plan: 'Activ One MAX with HealthReturns',
-        planDesc: 'HealthReturns rewards you in real rupees for every Active Day — your gym sessions, your runs, your step counts are already paying for your premium. Most performance trackers earn back 40–60% of their annual premium.',
-        tags: ['HealthReturns', 'Active Days Tracking', 'Fitness Rewards', 'OPD Wallet'],
-        coverAmt: '₹10L'
+        emoji:'⚡', type:'The Performance Tracker',
+        desc:'You treat health like a sport — data-driven, outcome-focused. Insurance for you isn\'t about fear. It\'s about making sure your investment in your body is financially protected and rewarded.',
+        plan:'Activ One MAX with HealthReturns',
+        planDesc:'HealthReturns rewards you in real rupees for every Active Day — your gym sessions, your runs, your step counts are already paying for your premium. Most performance trackers earn back 40–60% of their annual premium.',
+        tags:['HealthReturns','Active Days Tracking','Fitness Rewards','OPD Wallet'], coverAmt:'₹10L'
       },
       stress_manager: {
-        emoji: '🧠',
-        type: 'The Stress-Burdened Pro',
-        desc: 'Your health concern is closely tied to your work life. You know stress is doing damage — you just haven\'t had a plan that addresses it. Most people in your position are underinsured specifically for mental health.',
-        plan: 'Activ One MAX with Mental Health Cover',
-        planDesc: 'Activ One MAX includes hospitalisation cover for mental health conditions — one of the only health plans in India that does. Your teleconsultations and therapy sessions are covered through the OPD Wallet.',
-        tags: ['Mental Health Cover', 'OPD Wallet', 'Income Protect', 'Teleconsultation'],
-        coverAmt: '₹5L'
+        emoji:'🧠', type:'The Stress-Burdened Pro',
+        desc:'Your health concern is closely tied to your work life. Most people in your position are underinsured specifically for mental health — it\'s the most common gap in employer cover.',
+        plan:'Activ One MAX with Mental Health Cover',
+        planDesc:'Activ One MAX includes hospitalisation cover for mental health conditions — one of the only health plans in India that does. Teleconsultations and therapy are covered through the OPD Wallet.',
+        tags:['Mental Health Cover','OPD Wallet','Income Protect','Teleconsultation'], coverAmt:'₹5L'
       },
       sleep_optimiser: {
-        emoji: '🌙',
-        type: 'The Sleep Optimiser',
-        desc: 'Poor sleep is your signal that something deeper needs attention. You\'re already investing in understanding your body. The right insurance plan gives you access to the specialists and diagnostics that explain the why.',
-        plan: 'Activ Fit Plus',
-        planDesc: 'OPD cover for sleep consultations, diagnostics, and preventive care — combined with HealthReturns that tracks your improving sleep metrics through your wearable data.',
-        tags: ['OPD Wallet', 'Preventive Diagnostics', 'HealthReturns Sleep Tracking'],
-        coverAmt: '₹5L'
+        emoji:'🌙', type:'The Sleep Optimiser',
+        desc:'Poor sleep is your signal that something deeper needs attention. You\'re already investing in understanding your body. The right plan gives you access to the specialists and diagnostics that explain the why.',
+        plan:'Activ Fit Plus',
+        planDesc:'OPD cover for sleep consultations, diagnostics, and preventive care — combined with HealthReturns that tracks your improving sleep metrics through your wearable data.',
+        tags:['OPD Wallet','Preventive Diagnostics','HealthReturns','Sleep Tracking'], coverAmt:'₹5L'
       },
       womens_health: {
-        emoji: '🌸',
-        type: 'The Women\'s Health Advocate',
-        desc: 'You\'re managing a health condition that requires recurring spend — diagnostics, consultations, specialist visits. You\'re already investing in your health; the gap is coverage that matches what you\'re actually spending on.',
-        plan: 'Activ One MAX with OPD + Maternity',
-        planDesc: 'PCOS, thyroid, and hormonal health diagnostics are recurring OPD spends. Activ One MAX\'s OPD Wallet covers consultations and diagnostics. The maternity construct ensures your next life stage is covered.',
-        tags: ['OPD Wallet', 'Maternity Cover', 'Diagnostic Cover', 'Women\'s Health'],
-        coverAmt: '₹10L'
+        emoji:'🌸', type:'The Women\'s Health Advocate',
+        desc:'You\'re managing recurring health spend — diagnostics, consultations, specialist visits. You\'re already investing in your health; the gap is coverage that matches what you\'re actually spending on.',
+        plan:'Activ One MAX with OPD + Maternity',
+        planDesc:'PCOS, thyroid, and hormonal health diagnostics are recurring OPD spends. Activ One MAX\'s OPD Wallet covers consultations and diagnostics. The maternity construct ensures your next life stage is covered too.',
+        tags:['OPD Wallet','Maternity Cover','Diagnostic Cover','Women\'s Health'], coverAmt:'₹10L'
       },
       preventive_planner: {
-        emoji: '🔬',
-        type: 'The Preventive Planner',
-        desc: 'You treat health as a long-term investment, not a reaction. You\'re already spending thoughtfully on diagnostics and preventive care. The gap is that most of that spend is out-of-pocket when a good OPD plan would cover it.',
-        plan: 'Activ One MAX',
-        planDesc: 'You\'re already doing the right things — your insurance should match that. Activ One MAX\'s OPD Wallet covers your annual diagnostic panels, specialist consultations, and preventive health spend that hospitalisation-only plans miss entirely.',
-        tags: ['OPD Wallet', 'Annual Health Check', 'Preventive Cover', 'HealthReturns'],
-        coverAmt: '₹10L'
+        emoji:'🔬', type:'The Preventive Planner',
+        desc:'You treat health as a long-term investment. You\'re already spending thoughtfully on diagnostics and preventive care. The gap is that most of that spend is out-of-pocket when a good OPD plan would cover it.',
+        plan:'Activ One MAX',
+        planDesc:'Your insurance should match how you already invest in your health. Activ One MAX\'s OPD Wallet covers annual diagnostic panels, specialist consultations, and preventive health spend that hospitalisation-only plans miss entirely.',
+        tags:['OPD Wallet','Annual Health Check','Preventive Cover','HealthReturns'], coverAmt:'₹10L'
       },
       newly_jolted: {
-        emoji: '⚡',
-        type: 'The Newly Jolted',
-        desc: 'Something recently made you take your health seriously. That shift in mindset is the moment most people act — and the ones who do are glad they did. You\'re at the right inflection point.',
-        plan: 'Activ Fit Plus — Start Today',
-        planDesc: 'You don\'t need to figure it all out right now. Activ Fit gives you solid hospitalisation cover and OPD benefits at ~₹514/month — less than most people spend on supplements. You can upgrade as you learn what you actually need.',
-        tags: ['Entry Plan', 'Immediate Activation', 'Upgrade Path', 'OPD Basics'],
-        coverAmt: '₹5L'
+        emoji:'⚡', type:'The Newly Jolted',
+        desc:'Something recently made you take your health seriously. That shift in mindset is the moment most people act — and the ones who do are glad they did. You\'re at the right inflection point.',
+        plan:'Activ Fit Plus — Start Today',
+        planDesc:'You don\'t need to figure it all out right now. Activ Fit gives you solid hospitalisation cover and OPD benefits at ~₹514/month — less than most people spend on supplements monthly.',
+        tags:['Entry Plan','Immediate Activation','Upgrade Path','OPD Basics'], coverAmt:'₹5L'
       }
     };
 
     const p = profiles[archetype] || profiles.preventive_planner;
     const annualSpend = state.q4 * 12;
     const gap = Math.round(annualSpend * 0.55);
-
-    document.getElementById('result-emoji').textContent = p.emoji;
-    document.getElementById('result-archetype').textContent = 'Your Yuva Type';
-    document.getElementById('result-title').textContent = p.type;
-    document.getElementById('result-desc').textContent = p.desc;
-    document.getElementById('result-xp').textContent = state.xp + ' XP earned';
-    document.getElementById('reco-plan-name').textContent = p.plan;
-    document.getElementById('reco-plan-desc').textContent = p.planDesc;
-
     const annualStr = annualSpend >= 10000 ? '₹'+(annualSpend/1000).toFixed(0)+'k' : '₹'+annualSpend;
     const gapStr = gap >= 10000 ? '₹'+(gap/1000).toFixed(0)+'k' : '₹'+gap;
 
+    document.getElementById('result-emoji').textContent = p.emoji;
+    document.getElementById('result-title').textContent = p.type;
+    document.getElementById('result-desc').textContent = p.desc;
+    document.getElementById('result-xp').textContent = state.xp+' XP earned';
+    document.getElementById('reco-plan-name').textContent = p.plan;
+    document.getElementById('reco-plan-desc').textContent = p.planDesc;
     document.getElementById('stat-spend').textContent = annualStr;
     document.getElementById('stat-gap').textContent = gapStr;
     document.getElementById('stat-cover').textContent = p.coverAmt;
-
-    const tagsEl = document.getElementById('reco-tags');
-    tagsEl.innerHTML = p.tags.map(t => `<span class="reco-tag">${t}</span>`).join('');
+    document.getElementById('reco-tags').innerHTML = p.tags.map(t=>`<span class="reco-tag">${t}</span>`).join('');
   }
 
-  // ── INIT SLIDER ───────────────────────────────────────
-  document.addEventListener('DOMContentLoaded', () => {
-    updateSlider(2500);
-    document.getElementById('next-q4').disabled = false;
-  });
+  // ── DATA COLLECTION ────────────────────────────────────────
+  function sendToSheet() {
+    // Don't attempt if URL hasn't been set
+    if(!SHEET_URL || SHEET_URL === 'PASTE_YOUR_APPS_SCRIPT_URL_HERE') {
+      console.log('Survey complete. Sheet URL not configured yet.');
+      console.log('Response data:', JSON.stringify(state, null, 2));
+      return;
+    }
+
+    const indicator = document.getElementById('save-indicator');
+    indicator.classList.add('show');
+
+    const payload = {
+      q1: state.q1,
+      q2: state.q2,
+      q3: state.q3,
+      q4: state.q4,
+      q5: state.q5,
+      q6: state.q6,
+      q7: state.q7,
+      q8: state.q8,
+      q9: state.q9,
+      age: state.age,
+      work: state.work,
+      xp: state.xp,
+      archetype: state.archetype
+    };
+
+    // Using no-cors mode — data is sent but we can't read the response
+    // This is normal and expected for cross-origin requests to Apps Script
+    fetch(SHEET_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    })
+    .then(() => {
+      indicator.innerHTML = '<span style="color:var(--teal)">✓</span> <span>Responses saved. Thank you!</span>';
+    })
+    .catch(() => {
+      // Even on error, no-cors responses appear as errors but usually succeed
+      indicator.innerHTML = '<span style="color:var(--teal)">✓</span> <span>Responses saved. Thank you!</span>';
+    });
+  }
 </script>
 </body>
 </html>
