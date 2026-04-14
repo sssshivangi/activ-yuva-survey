@@ -1075,13 +1075,6 @@
 
   // ── DATA COLLECTION ────────────────────────────────────────
   function sendToSheet() {
-    // Don't attempt if URL hasn't been set
-    if(!SHEET_URL || SHEET_URL === 'https://script.google.com/macros/s/AKfycbwyskS1P-CJw9V2xiA6TVVCSDhoP541z2CNPqj0PKheNVh3eF2A2x0PjL5JuDLPVL0/exec') {
-      console.log('Survey complete. Sheet URL not configured yet.');
-      console.log('Response data:', JSON.stringify(state, null, 2));
-      return;
-    }
-
     const indicator = document.getElementById('save-indicator');
     indicator.classList.add('show');
 
@@ -1101,19 +1094,19 @@
       archetype: state.archetype
     };
 
-    // Using no-cors mode — data is sent but we can't read the response
-    // This is normal and expected for cross-origin requests to Apps Script
+    // Content-Type must be text/plain for no-cors mode —
+    // browsers drop the body with application/json + no-cors.
+    // Apps Script reads e.postData.contents regardless of the header.
     fetch(SHEET_URL, {
       method: 'POST',
       mode: 'no-cors',
-      headers: { 'Content-Type': 'application/json' },
+      headers: { 'Content-Type': 'text/plain' },
       body: JSON.stringify(payload)
     })
     .then(() => {
       indicator.innerHTML = '<span style="color:var(--teal)">✓</span> <span>Responses saved. Thank you!</span>';
     })
     .catch(() => {
-      // Even on error, no-cors responses appear as errors but usually succeed
       indicator.innerHTML = '<span style="color:var(--teal)">✓</span> <span>Responses saved. Thank you!</span>';
     });
   }
